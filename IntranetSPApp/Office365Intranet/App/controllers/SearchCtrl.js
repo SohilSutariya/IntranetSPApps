@@ -7,7 +7,9 @@
 
             $scope.currentPage = 1;
             $scope.totalItems = 0;
-            $scope.maxSize = 5;
+            $scope.maxSize = 5; //Number of pages to display in pagination
+            $scope.pageSize = 10;
+            $scope.startItemNo = 0;
             $scope.results = {};
             $scope.activeRefiners = [];
             $scope.refiners = [];
@@ -19,9 +21,10 @@
             $scope.search = function () {
                 if ($scope.searchQuery != "") {
                     $scope.searching = true;
+                    $scope.totalItems = 0;
 
                     DataService
-                        .getSearchResults($scope.searchQuery, $scope.currentPage, 10, $scope.activeRefiners)
+                        .getSearchResults($scope.searchQuery, $scope.currentPage, $scope.pageSize, $scope.activeRefiners)
                         .success(function (data) {
                             console.log("Retrieved search results successfully: ");
                             console.log(data);
@@ -31,6 +34,13 @@
                             if ($scope.query.RelevantResults != null) {
                                 $scope.totalItems = $scope.query.RelevantResults.TotalRows;
                                 $scope.results = $scope.query.RelevantResults.Table.Rows.results;
+                                $scope.startItemNo = ($scope.currentPage - 1) * $scope.pageSize + 1;
+                                if ($scope.startItemNo + ($scope.pageSize - 1) < $scope.totalItems) {
+                                    $scope.endItemNo = $scope.startItemNo + ($scope.pageSize - 1);
+                                }
+                                else {
+                                    $scope.endItemNo = $scope.totalItems;
+                                }
                             }
                             else {
                                 $scope.results = {};

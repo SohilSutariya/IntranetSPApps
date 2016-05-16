@@ -1,10 +1,11 @@
 ﻿<div class="container" ng-controller="SearchCtrl">
 
-    <div class="search-container shadow">
+    <div class="search-container card shadow">
         <div class="row">
             <div ng-show="totalItems > 0">
-                <div class="col-sm-2">
+                <div class="hidden-xs col-sm-2">
                     <div class="refiners">
+                        <h5>Sort</h5>
                         <div class="refiner" ng-repeat="refiner in refiners">
                             <h6 ng-click="expandToggle(refiner.name)">{{refiner.name}}</h6>
                             <ul>
@@ -28,9 +29,10 @@
                     </div>
                 </div>
 
-                <div class="col-sm-8">
+                <div class="col-md-7 col-sm-10">
                     <div class="search-results">
-                        <h4>Search Results</h4>
+                        <h4 class="search-header">Search Results</h4>
+                        <p class="search-numbers"><strong>{{startItemNo}}-{{endItemNo}}</strong> of about {{totalItems}} results</p>
                         <form>
                             <div class="form-group">
                                 <input type="text" class="form-control search-bar" placeholder="Search" ng-model="searchQuery" ng-model-options="{ debounce: 300 }" ng-change="updateSearch()">
@@ -39,8 +41,8 @@
 
                         <div class="search-result-item" ng-repeat="result in results">
                             <h6><a target="_blank" ng-href="{{result.Cells.results[6].Value}}">{{result.Cells.results[3].Value}}</a></h6>
-                            <p ng-if="result.Cells.results[18].Value">{{result.Cells.results[18].Value}}</p>
-                            <p class="path-color">{{result.Cells.results[6].Value}}</p>
+                            <p class="search-hit-summary">{{result.Cells.results[11].Value | htmlToPlainText}}</p>
+                            <p class="search-hit-path path-color">{{result.Cells.results[6].Value}}</p>
                         </div>
 
                         <div class="text-center">
@@ -51,9 +53,22 @@
             </div>
 
             <div class="col-sm-12" ng-show="totalItems < 1">
-                <div class="jumbotron">
-                    <h2 class="text-center" ng-show="searching">Searching SharePoint...</h2>
-                    <h2 class="text-center" ng-show="!searching">Nothing found!</h2>
+                <div class="search-hint text-center">
+                    <div ng-show="searching">
+                        <span class="searching-icon glyphicon glyphicon-search"></span>
+                        <h3 class="text-center">
+                            Searching SharePoint...
+                        </h3>
+                    </div>
+                    <div ng-show="!searching">
+                        <span class="searching-icon glyphicon glyphicon-thumbs-up"></span>
+                        <h3 class="text-center">
+                            Nothing found.
+                        </h3>
+                        <h3>
+                            Have you tried turning it off and on again?
+                        </h3>
+                    </div>
                 </div>
             </div>
         </div>
