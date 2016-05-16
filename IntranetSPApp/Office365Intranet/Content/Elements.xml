@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Content">
+    <File Path="Content\ui-bootstrap-csp.css" Url="Content/ui-bootstrap-csp.css" ReplaceContent="TRUE" />
+    <File Path="Content\App.css" Url="Content/App.css" ReplaceContent="TRUE" />
+    <File Path="Content\loading-bar.css" Url="Content/loading-bar.css" ReplaceContent="TRUE" />
+    <File Path="Content\loading-bar.min.css" Url="Content/loading-bar.min.css" ReplaceContent="TRUE" />
+    <File Path="Content\weather-css\weather-icons-wind.css" Url="Content/weather-css/weather-icons-wind.css" ReplaceContent="TRUE" />
+    <File Path="Content\weather-css\weather-icons-wind.min.css" Url="Content/weather-css/weather-icons-wind.min.css" ReplaceContent="TRUE" />
+    <File Path="Content\weather-css\weather-icons.css" Url="Content/weather-css/weather-icons.css" ReplaceContent="TRUE" />
+    <File Path="Content\weather-css\weather-icons.min.css" Url="Content/weather-css/weather-icons.min.css" ReplaceContent="TRUE" />
+    <File Path="Content\font\weathericons-regular-webfont.svg" Url="Content/font/weathericons-regular-webfont.svg" ReplaceContent="TRUE" />
+    <File Path="Content\font\weathericons-regular-webfont.ttf" Url="Content/font/weathericons-regular-webfont.ttf" ReplaceContent="TRUE" />
+    <File Path="Content\font\weathericons-regular-webfont.woff" Url="Content/font/weathericons-regular-webfont.woff" ReplaceContent="TRUE" />
+    <File Path="Content\font\weathericons-regular-webfont.woff2" Url="Content/font/weathericons-regular-webfont.woff2" ReplaceContent="TRUE" />
+    <File Path="Content\font\weathericons-regular-webfont.eot" Url="Content/font/weathericons-regular-webfont.eot" ReplaceContent="TRUE" />
+  </Module>
+</Elements>

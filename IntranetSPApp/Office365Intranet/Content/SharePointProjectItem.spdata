@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Content\" Type="ElementManifest" />
+    <ProjectItemFile Source="ui-bootstrap-csp.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="App.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="loading-bar.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="loading-bar.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="weather-css\weather-icons-wind.css" Target="Content\weather-css\" Type="ElementFile" />
+    <ProjectItemFile Source="weather-css\weather-icons-wind.min.css" Target="Content\weather-css\" Type="ElementFile" />
+    <ProjectItemFile Source="weather-css\weather-icons.css" Target="Content\weather-css\" Type="ElementFile" />
+    <ProjectItemFile Source="weather-css\weather-icons.min.css" Target="Content\weather-css\" Type="ElementFile" />
+    <ProjectItemFile Source="font\weathericons-regular-webfont.svg" Target="Content\font\" Type="ElementFile" />
+    <ProjectItemFile Source="font\weathericons-regular-webfont.ttf" Target="Content\font\" Type="ElementFile" />
+    <ProjectItemFile Source="font\weathericons-regular-webfont.woff" Target="Content\font\" Type="ElementFile" />
+    <ProjectItemFile Source="font\weathericons-regular-webfont.woff2" Target="Content\font\" Type="ElementFile" />
+    <ProjectItemFile Source="font\weathericons-regular-webfont.eot" Target="Content\font\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

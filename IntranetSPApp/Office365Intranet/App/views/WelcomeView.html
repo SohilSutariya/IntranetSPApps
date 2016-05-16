@@ -1,0 +1,186 @@
+﻿<div ng-controller="Welcome">
+
+    <div class="row">
+
+        <div class="col-md-8 col-lg-9 col-wrapper">
+            <div class="col-lg-push-3 col-lg-9 col-md-12">
+                <div class="card ceo-message shadow">
+                    <div class="row">
+                        <div class="img-container col-sm-4">
+                            <img src="http://s.wsj.net/public/resources/images/OB-XJ399_barmin_E_20130507002211.jpg" class="img-responsive" />
+                        </div>
+                        <div class="col-sm-8">
+                            <h4 class="header">Message from the CEO</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image Carousel -->
+                <div class="gallery">
+                    <uib-carousel active="0" interval="5000">
+                        <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <img class="img-responsive img-rounded" ng-src="{{slide.image}}" style="margin:auto;">
+                        </uib-slide>
+                    </uib-carousel>
+                </div>
+                <!-- /Image Carousel -->
+                <!-- Announcements List -->
+                <div class="announcements">
+                    <div class="row" ng-repeat="announcement in announcements" ng-click="openAnnouncement(announcement)">
+                        <div class="announcement card shadow">
+                            <script type="text/ng-template" id="announcementModal.html">
+                                <div class="modal-header">
+                                    <h4>{{ item.Title }}</h4>
+                                </div>
+                                <div class="modal-body" ng-bind-html="body">
+                                </div>
+                            </script>
+                            <div class="icon">
+                                <a href>
+                                    <span class="glyphicon glyphicon-bullhorn"></span>
+                                </a>
+                            </div>
+                            <div class="body">
+                                <p><strong>{{ announcement.Title }}</strong></p>
+                                {{ announcement.Body | htmlToPlainText }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Announcements List -->
+                <!-- News List-->
+                <div class="card news shadow">
+                    <h4 class="header">
+                        <span class="glyphicon glyphicon-pencil"></span> Company News
+                    </h4>
+                    <ul>
+                        <li ng-repeat="article in news">
+                            <a href>
+                                <div class="row">
+                                    <div class="col-sm-2">{{ article.date }}</div>
+                                    <div class="col-sm-10">{{ article.description }}</div>
+                                </div>
+                            </a>
+                            <hr ng-if="!$last" />
+                        </li>
+                    </ul>
+                </div>
+                <!-- /News List-->
+            </div>
+
+            <div class="col-lg-pull-9 col-lg-3 col-md-12">
+                <!-- Calendar -->
+                <div class="card calendar shadow">
+                    <h5 class="header">
+                        <span class="glyphicon glyphicon-calendar"></span> Company Links
+                    </h5>
+                    <ul>
+                        <li>
+                            <a href>
+                                <div>Code of Conduct</div>
+                            </a>
+                            <hr />
+                        </li>
+                        <li>
+                            <a href>
+                                <div>Values</div>
+                            </a>
+                            <hr />
+                        </li>
+                        <li>
+                            <a href>
+                                <div>QA Statements</div>
+                            </a>
+                            <hr />
+                        </li>
+                        <li>
+                            <a href>
+                                <div>Our Executives</div>
+                            </a>
+                            <hr />
+                        </li>
+                        <li>
+                            <a href>
+                                <div>Our SLT</div>
+                            </a>
+                            <hr />
+                        </li>
+                    </ul>
+                </div>
+                <!-- Calendar -->
+
+                <!-- Weather Widget -->
+                <div class="row weather-area">
+                    <div class="col-xs-6 col-sm-4 col-lg-12" ng-repeat="forecast in weatherData">
+                        <a target="_blank" ng-href="{{forecast.link}}">
+                            <div class="weather-widget shadow">
+                                <h6 class="text-center">{{forecast.location.city}}, {{forecast.location.country}}</h6>
+                                <p class="weather-date text-center">{{forecast.item.condition.date}}</p>
+                                <div class="row">
+                                    <div class="col-xs-7 weather-details">
+                                        <h4>{{forecast.item.condition.temp}}°C</h4>
+                                        <p>{{forecast.item.condition.text}}</p>
+                                    </div>
+                                    <span class="weather-icon pull-right secondary-colour">
+                                        <i class="wi" ng-class="mapWeatherIcon(forecast.item.condition.code)"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+            <!-- Application Links-->
+            <div class="row" ng-show="appLinks.length > 0">
+                <div class="col-sm-12">
+                    <div class="app-links">
+                        <a ng-repeat="link in appLinks" ng-href="{{ link.App_x0020_url.Url }}" target="_blank">
+                            <div class="app-link text-center shadow secondary-colour-bg">
+                                <div class="app-link-content">
+                                    <span class="glyphicon glyphicon-globe"></span>
+                                    <p>{{ link.Title }}</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Important Links-->
+
+            <!-- Calendar -->
+            <div class="card calendar shadow">
+                <h5 class="header">
+                    <span class="glyphicon glyphicon-calendar"></span> Upcoming Events
+                </h5>
+                <ul>
+                    <li ng-repeat="event in calendar">
+                        <a href>
+                            <div class="row">
+                                <div class="col-sm-3">{{ event.date }}</div>
+                                <div class="col-sm-9">{{ event.description }}</div>
+                            </div>
+                        </a>
+                        <hr ng-if="!$last" />
+                    </li>
+                </ul>
+            </div>
+            <!-- Calendar -->
+
+            <!-- Youtube Embed -->
+            <!--<div class="row" ng-show="embedUrl">-->
+            <div class="videowrapper">
+                <!--<iframe ng-src="{{ embedUrl }}" frameborder="0" allowfullscreen></iframe> -->
+                <iframe src="https://www.youtube.com/embed/c7nRTF2SowQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <!-- /Youtube Embed -->
+        </div>
+
+    </div>
+
+</div>

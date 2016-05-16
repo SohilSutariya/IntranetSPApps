@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Scripts\" Type="ElementManifest" />
+    <ProjectItemFile Source="jquery\jquery-2.2.2.min.map" Target="Scripts\jquery\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery\jquery-2.2.2.min.js" Target="Scripts\jquery\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery\jquery-2.2.2.js" Target="Scripts\jquery\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery\jquery-2.2.2.intellisense.js" Target="Scripts\jquery\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular.min.js.map" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-mocks.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-route.min.js.map" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-route.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-route.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\ui-bootstrap.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\ui-bootstrap.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\ui-bootstrap-tpls.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\ui-bootstrap-tpls.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\js\bootstrap.min.js" Target="Scripts\Bootstrap\js\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\js\bootstrap.js" Target="Scripts\Bootstrap\js\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\fonts\glyphicons-halflings-regular.eot" Target="Scripts\Bootstrap\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\fonts\glyphicons-halflings-regular.svg" Target="Scripts\Bootstrap\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\fonts\glyphicons-halflings-regular.ttf" Target="Scripts\Bootstrap\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\fonts\glyphicons-halflings-regular.woff" Target="Scripts\Bootstrap\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\fonts\glyphicons-halflings-regular.woff2" Target="Scripts\Bootstrap\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap.min.css.map" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap.min.css" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap.css.map" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap.css" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap-theme.min.css.map" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap-theme.min.css" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap-theme.css.map" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Bootstrap\css\bootstrap-theme.css" Target="Scripts\Bootstrap\css\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-cookies.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-cookies.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-animate.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-animate.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\loading-bar.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\loading-bar.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-local-storage.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-local-storage.js" Target="Scripts\Angular\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

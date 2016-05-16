@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" data-ng-app="app">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Barminco Intranet</title>
+
+    <!-- Load angular script in head for ng-cloak to be effective -->
+    <script src="Scripts/Angular/angular.js"></script>
+
+    <link href="Content/weather-css/weather-icons.css" rel="stylesheet" />
+    <link href="Scripts/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/App.css" rel="stylesheet" />
+    <link href="Content/loading-bar.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller="Layout" ng-cloak>
+
+    <!-- Main Header Navbar -->
+    <div class="hidden-xs">
+        <nav class="navbar navbar-inverse top-nav primary-colour-darken-bg">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="top-nav-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-shortcut"><a href="../intranet/app.html"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li class="nav-shortcut"><a href><span class="glyphicon glyphicon-bookmark"></span></a></li>
+                    <li class="nav-shortcut"><a href><span class="glyphicon glyphicon-globe"></span></a></li>
+                    <li class="nav-shortcut"><a href><span class="glyphicon glyphicon-th-large"></span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form navbar-right navbar-search" role="search">
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control" placeholder="Search" ng-model="searchQuery" ng-model-options="{ debounce: 300 }" ng-change="updateSearch()">
+                                <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-inverse bottom-nav primary-colour-bg">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottom-nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../intranet/app.html"><img src="../intranet/Images/logo.png" height="60" /></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bottom-nav-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li uib-dropdown ng-repeat="menu in dropdown | filter: { parent: 'root' }">
+                        <a href uib-dropdown-toggle ng-if="filteredItems.length > 0">
+                            {{ menu.Title }} <span class="caret"></span>
+                        </a>
+                        <a target="_blank" ng-href="{{ menu.siteurl.Url }}" ng-if="filteredItems.length < 1">
+                            {{ menu.Title }}
+                        </a>
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li ng-repeat="item in filteredItems = ( dropdown | filter: { parent: menu.Title })" ng-if="filteredItems.length > 0">
+                                <a target="_blank" ng-href="{{ item.siteurl.Url }}">{{ item.Title }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="visible-xs">
+        <nav class="navbar navbar-inverse bottom-nav primary-colour-bg">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#xs-nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../intranet/app.html"><img src="../intranet/Images/logo.png" height="60" /></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="xs-nav-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-shortcut"><a href><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li class="nav-shortcut"><a href><span class="glyphicon glyphicon-bookmark"></span></a></li>
+                    <li class="nav-shortcut"><a href><span class="glyphicon glyphicon-globe"></span></a></li>
+                    <li class="nav-shortcut"><a href><span class="glyphicon glyphicon-th-large"></span></a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li uib-dropdown ng-repeat="menu in dropdown | filter: { parent: 'root' }">
+                        <a href uib-dropdown-toggle ng-if="filteredItems.length > 0">
+                            {{ menu.Title }} <span class="caret"></span>
+                        </a>
+                        <a target="_blank" ng-href="{{ menu.siteurl.Url }}" ng-if="filteredItems.length < 1">
+                            {{ menu.Title }}
+                        </a>
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li ng-repeat="item in filteredItems = ( dropdown | filter: { parent: menu.Title })" ng-if="filteredItems.length > 0">
+                                <a target="_blank" ng-href="{{ item.siteurl.Url }}">{{ item.Title }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <form class="navbar-form navbar-right navbar-search" role="search">
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control" placeholder="Search" ng-model="searchQuery" ng-model-options="{ debounce: 300 }" ng-change="updateSearch()">
+                                <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- /Main Header Navbar -->
+
+
+    <div class="container-fluid">
+        <ng-view></ng-view>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content primary-colour-bg">
+            <p class="text-muted">
+                © Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            </p>
+        </div>
+    </footer>
+
+    <!-- /GENERAL SCRIPTS -->
+    <script src="Scripts/jquery/jquery-2.2.2.js"></script>
+    <script src="Scripts/Bootstrap/js/bootstrap.js"></script>
+    <script src="App/util/jquery-extensions.js"></script>
+    <script src="App/util/array-helper.js"></script>
+    <!-- /GENERAL SCRIPTS -->
+    <!-- ANGULAR SCRIPTS -->
+    <script src="Scripts/Angular/angular-route.js"></script>
+    <script src="Scripts/Angular/angular-cookies.js"></script>
+    <script src="Scripts/Angular/angular-animate.js"></script>
+    <script src="Scripts/Angular/angular-local-storage.js"></script>
+    <script src="Scripts/Angular/ui-bootstrap-tpls.js"></script>
+    <script src="Scripts/Angular/ui-bootstrap.js"></script>
+    <script src="Scripts/Angular/loading-bar.js"></script>
+    <!-- /ANGULAR SCRIPTS -->
+    <!-- ANGULAR APPLICATION -->
+    <script src="App/app.js"></script>
+    <script src="App/filters/htmlFilter.js"></script>
+    <script src="App/services/DataService.js"></script>
+    <script src="App/services/WeatherService.js"></script>
+    <script src="App/services/SPContext.js"></script>
+    <script src="App/controllers/modals/AnnouncementModalCtrl.js"></script>
+    <script src="App/controllers/LayoutCtrl.js"></script>
+    <script src="App/controllers/WelcomeCtrl.js"></script>
+    <script src="App/controllers/SearchCtrl.js"></script>
+    <!-- /ANGULAR APPLICATION -->
+
+</body>
+</html>

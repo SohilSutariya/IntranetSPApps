@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="1639111b-95a0-4ead-9967-aa6fffb00605" 
+        solutionId="1639111b-95a0-4ead-9967-aa6fffb00605" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="Office365Intranet"
+        sharePointProductVersion="15.0">
+  <features>
+        <featureReference itemId="114115f8-c321-4128-9691-0b8d5e5cf0c9" />
+  </features>
+</package>

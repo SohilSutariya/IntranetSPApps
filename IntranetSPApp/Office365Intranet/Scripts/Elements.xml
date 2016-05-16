@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Scripts">
+    <File Path="Scripts\jquery\jquery-2.2.2.min.map" Url="Scripts/jquery/jquery-2.2.2.min.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery\jquery-2.2.2.min.js" Url="Scripts/jquery/jquery-2.2.2.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery\jquery-2.2.2.js" Url="Scripts/jquery/jquery-2.2.2.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery\jquery-2.2.2.intellisense.js" Url="Scripts/jquery/jquery-2.2.2.intellisense.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular.min.js.map" Url="Scripts/Angular/angular.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular.min.js" Url="Scripts/Angular/angular.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular.js" Url="Scripts/Angular/angular.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-mocks.js" Url="Scripts/Angular/angular-mocks.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-route.min.js.map" Url="Scripts/Angular/angular-route.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-route.min.js" Url="Scripts/Angular/angular-route.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-route.js" Url="Scripts/Angular/angular-route.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\ui-bootstrap.min.js" Url="Scripts/Angular/ui-bootstrap.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\ui-bootstrap.js" Url="Scripts/Angular/ui-bootstrap.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\ui-bootstrap-tpls.min.js" Url="Scripts/Angular/ui-bootstrap-tpls.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\ui-bootstrap-tpls.js" Url="Scripts/Angular/ui-bootstrap-tpls.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\js\bootstrap.min.js" Url="Scripts/Bootstrap/js/bootstrap.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\js\bootstrap.js" Url="Scripts/Bootstrap/js/bootstrap.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.eot" Url="Scripts/Bootstrap/fonts/glyphicons-halflings-regular.eot" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.svg" Url="Scripts/Bootstrap/fonts/glyphicons-halflings-regular.svg" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.ttf" Url="Scripts/Bootstrap/fonts/glyphicons-halflings-regular.ttf" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.woff" Url="Scripts/Bootstrap/fonts/glyphicons-halflings-regular.woff" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.woff2" Url="Scripts/Bootstrap/fonts/glyphicons-halflings-regular.woff2" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap.min.css.map" Url="Scripts/Bootstrap/css/bootstrap.min.css.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap.min.css" Url="Scripts/Bootstrap/css/bootstrap.min.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap.css.map" Url="Scripts/Bootstrap/css/bootstrap.css.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap.css" Url="Scripts/Bootstrap/css/bootstrap.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap-theme.min.css.map" Url="Scripts/Bootstrap/css/bootstrap-theme.min.css.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap-theme.min.css" Url="Scripts/Bootstrap/css/bootstrap-theme.min.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap-theme.css.map" Url="Scripts/Bootstrap/css/bootstrap-theme.css.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\Bootstrap\css\bootstrap-theme.css" Url="Scripts/Bootstrap/css/bootstrap-theme.css" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-cookies.min.js" Url="Scripts/Angular/angular-cookies.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-cookies.js" Url="Scripts/Angular/angular-cookies.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-animate.min.js" Url="Scripts/Angular/angular-animate.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-animate.js" Url="Scripts/Angular/angular-animate.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\loading-bar.js" Url="Scripts/Angular/loading-bar.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\loading-bar.min.js" Url="Scripts/Angular/loading-bar.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-local-storage.min.js" Url="Scripts/Angular/angular-local-storage.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-local-storage.js" Url="Scripts/Angular/angular-local-storage.js" ReplaceContent="TRUE" />
+  </Module>
+</Elements>

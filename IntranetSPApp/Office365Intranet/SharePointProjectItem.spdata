@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Type="ElementManifest" />
+    <ProjectItemFile Source="App\app.js" Target="App\" Type="ElementFile" />
+    <ProjectItemFile Source="App\views\WelcomeView.html" Target="App\views\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\WelcomeCtrl.js" Target="App\controllers\" Type="ElementFile" />
+    <ProjectItemFile Source="App\services\DataService.js" Target="App\services\" Type="ElementFile" />
+    <ProjectItemFile Source="App\util\jquery-extensions.js" Target="App\util\" Type="ElementFile" />
+    <ProjectItemFile Source="App\services\SPContext.js" Target="App\services\" Type="ElementFile" />
+    <ProjectItemFile Source="App\launcher.js" Target="App\" Type="ElementFile" />
+    <ProjectItemFile Source="App\filters\htmlFilter.js" Target="App\filters\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\LayoutCtrl.js" Target="App\controllers\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\modals\AnnouncementModalCtrl.js" Target="App\controllers\modals\" Type="ElementFile" />
+    <ProjectItemFile Source="App\views\SearchView.html" Target="App\views\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\SearchCtrl.js" Target="App\controllers\" Type="ElementFile" />
+    <ProjectItemFile Source="App\util\array-helper.js" Target="App\util\" Type="ElementFile" />
+    <ProjectItemFile Source="App\services\WeatherService.js" Target="App\services\" Type="ElementFile" />
+  </Files>
+</ProjectItem>
