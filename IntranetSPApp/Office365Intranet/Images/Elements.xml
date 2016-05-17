@@ -7,6 +7,6 @@
     <File Path="Images\Slideshow\2.JPG" Url="Images/Slideshow/2.JPG" ReplaceContent="TRUE" />
     <File Path="Images\Slideshow\3.JPG" Url="Images/Slideshow/3.JPG" ReplaceContent="TRUE" />
     <File Path="Images\logo.png" Url="Images/logo.png" ReplaceContent="TRUE" />
-    <File Path="Images\weather.jpg" Url="Images/weather.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\graph.png" Url="Images/graph.png" ReplaceContent="TRUE" />
   </Module>
 </Elements>

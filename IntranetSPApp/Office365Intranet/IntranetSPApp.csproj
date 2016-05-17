@@ -80,7 +80,7 @@
     <Content Include="Content\weather-css\weather-icons.css" />
     <Content Include="Content\weather-css\weather-icons.min.css" />
     <Content Include="Content\font\weathericons-regular-webfont.svg" />
-    <Content Include="Images\weather.jpg" />
+    <Content Include="Images\graph.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\Slideshow\1.JPG" />
     <Content Include="Images\Slideshow\2.JPG" />

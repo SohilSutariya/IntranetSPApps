@@ -21,7 +21,6 @@
             $scope.search = function () {
                 if ($scope.searchQuery != "") {
                     $scope.searching = true;
-                    $scope.totalItems = 0;
 
                     DataService
                         .getSearchResults($scope.searchQuery, $scope.currentPage, $scope.pageSize, $scope.activeRefiners)
@@ -89,6 +88,7 @@
             }
 
             $scope.pageChanged = function () {
+                console.log($scope.currentPage);
                 $scope.search();
             };
 
@@ -99,9 +99,11 @@
             }
 
             $scope.newSearch = function () {
+                console.log("Performing new search");
                 $scope.currentPage = 1;
                 $scope.refiners.length = 0;
                 $scope.activeRefiners.length = 0;
+                $scope.totalItems = 0;
                 $scope.search();
             };
 

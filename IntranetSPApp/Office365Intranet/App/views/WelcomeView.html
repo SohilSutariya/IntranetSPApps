@@ -154,7 +154,7 @@
             <!-- /Important Links-->
 
             <!-- Calendar -->
-            <div class="card calendar shadow">
+            <!--<div class="card calendar shadow">
                 <h5 class="header">
                     <span class="glyphicon glyphicon-calendar"></span> Upcoming Events
                 </h5>
@@ -169,17 +169,42 @@
                         <hr ng-if="!$last" />
                     </li>
                 </ul>
-            </div>
+            </div>-->
             <!-- Calendar -->
 
-            <!-- Youtube Embed -->
-            <!--<div class="row" ng-show="embedUrl">-->
-            <div class="videowrapper">
-                <!--<iframe ng-src="{{ embedUrl }}" frameborder="0" allowfullscreen></iframe> -->
-                <iframe src="https://www.youtube.com/embed/c7nRTF2SowQ" frameborder="0" allowfullscreen></iframe>
+            <!--NewsLetters--->
+            
+               
+                   
+            <div class="card calendar shadow">
+                <h5 class="header">
+                    <span class="glyphicon glyphicon-calendar"></span> Quarterly NewsLetter (PORTAL)
+                </h5>
+                <a ng-repeat="news in newsletters" ng-href="http://google.com" target="_blank">
+                    <div class="clearfix">
+                        <div>
+                            <h6 class="header">{{ news.Title }}</h6>
+                        </div>
+                        <div>
+                            <img ng-src="{{ news.Thumbnail.Url }}" class="sport-image"></img>
+                            
+                        </div>
+                    </div>
+                </a>
+                
             </div>
-            <!-- /Youtube Embed -->
-        </div>
+                  
+                
+
+                <!--NewsLetters--->
+                <!-- Youtube Embed -->
+                <!--<div class="row" ng-show="embedUrl">-->
+                <div class="videowrapper">
+                    <!--<iframe ng-src="{{ embedUrl }}" frameborder="0" allowfullscreen></iframe> -->
+                    <iframe src="https://www.youtube.com/embed/c7nRTF2SowQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!-- /Youtube Embed -->
+            </div>
 
     </div>
 

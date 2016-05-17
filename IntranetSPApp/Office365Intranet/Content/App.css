@@ -4,7 +4,8 @@
 }
 
 body {
-    margin-bottom: 80px; /* margin for sticky footer */
+    margin-bottom: 80px; /* margin for sticky footer + margin between footer and page content */
+    /* blueprint pattern */
     background-color:#E0E0E0;
     background-image: 
         linear-gradient(#EEEEEE 2px, transparent 2px),
@@ -20,6 +21,7 @@ body {
     margin-bottom: 2em;
     border-radius: 4px;
 }
+
 
 /* WEATHER WIDGET */
 .weather-area {
@@ -78,8 +80,8 @@ body {
             width: 100% !important;
         }
     }
-
 /* /WEATHER WIDGET */
+
 
 /* SEARCH RESULTS PAGE */
 .search-container {
@@ -175,51 +177,9 @@ body {
         font-size: 8em;
     }
 
-/* styles for '...' */ 
 .search-hit-summary {
-    /* hide text if it more than N lines  */
-    overflow: hidden;
-    /* for set '...' in absolute position */
-    position: relative; 
-    /* use this value to count block height */
-    line-height: 1.2em;
-    /* max-height = line-height (1.2) * lines max number (3) */
-    max-height: 2.4em; 
-    /* fix problem when last visible word doesn't adjoin right side  */
-    text-align: justify;  
-    /* place for '...' */
-    /*margin-right: -1em;*/
-    padding-right: 1em;
-
     margin-top: 0.3em;
     margin-bottom: 0.3em;
-}
-
-/* create the ... */
-.search-hit-summary:before {
-  /* points in the end */
-  content: '...';
-  /* absolute position */
-  position: absolute;
-  /* set position to right bottom corner of block */
-  right: 0;
-  bottom: 0;
-}
-
-/* hide ... if we have text, which is less than or equal to max lines */
-.search-hit-summary:after {
-    /* points in the end */
-    content: '';
-    /* absolute position */
-    position: absolute;
-    /* set position to right bottom corner of text */
-    right: 0;
-    /* set width and height */
-    width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
-    /* bg color = bg color under block */
-    background: white;
 }
 
 .search-bar {
@@ -228,37 +188,7 @@ body {
 /* /SEARCH RESULTS PAGE */
 
 
-/* NAV SEARCH BAR */
-.navbar-search {
-    margin: 0;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-    .navbar-search > .form-group {
-        height: 60px;
-    }
-
-    .navbar-search > .form-group > input {
-        height: 60px;
-        border-radius: 0;
-        border: none;
-        background-color: rgba(0,0,0,0.5);
-        transition: all 400ms;
-    }
-
-        .navbar-search > .form-group > input:focus {
-            background-color: rgba(255,255,255,0.9);
-        }
-
-    .navbar-search > .form-group > i {
-        line-height: 60px;
-    }
-/* /NAV SEARCH BAR */
-
-
 /* CARDS UI */
-
 .card {
     border-top: 5px solid #E65B17;
     margin-bottom: 2em;
@@ -420,40 +350,6 @@ body {
     border-bottom: 1px solid rgba(0,0,0,0.12);
 }
 
-.news > ul {
-    list-style: none;
-    padding: 0;
-    background-color: white;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-}
-
-    .news > ul > li > a {
-        display: block;
-        padding: 1em;
-        color: rgba(0,0,0,0.87);
-    }
-
-    .news > ul > li > hr {
-        margin: 0 2em;
-    }
-
-    .news > ul > li > a > .glyphicon {
-        margin-right: 1em;
-        color: #2196f3;
-    }
-    
-    .news > ul > li:hover {
-        background-color: #F5F5F5;
-    }
-
-.news > .header {
-    padding: 1em;
-    margin: auto 1em;
-    color: rgba(0,0,0,0.54);
-        border-bottom: 1px solid rgba(0,0,0,0.12);
-    }
-
 .ceo-message {
     padding: 1em;
 }
@@ -465,6 +361,32 @@ body {
 
     .ceo-message .img-container > img {
         width: 100%;
+    }
+
+.safety-reports {
+    padding: 1em;
+}
+
+.safety-reports > ul {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+    .safety-reports > ul > li > a {
+        color: rgba(0,0,0,0.87);
+    }
+    
+    .safety-reports > ul > li:hover {
+        background-color: #F5F5F5;
+    }
+
+.safety-reports > .header,
+.safety-graph > .header {
+    color: rgba(0,0,0,0.54);
+}
+
+    .safety-graph {
+        padding: 1em;
     }
 /* /CARDS UI */
 
@@ -513,6 +435,58 @@ body {
         width: 100%;
         height: 100%;
     }
+
+.ellipsis {
+    /* styles for ellipsis */ 
+    /* hide text if it more than N lines  */
+    overflow: hidden;
+    /* for set '...' in absolute position */
+    position: relative; 
+    /* use this value to count block height */
+    line-height: 1.2em;
+    /* max-height = line-height (1.2) * lines max number */
+    max-height: 1.2em; 
+    /* fix problem when last visible word doesn't adjoin right side  */
+    text-align: justify;  
+    /* place for '...' */
+    /*margin-right: -1em;*/
+    padding-right: 1em;
+}
+
+.ellipsis.two-line {
+    max-height: 2.4em !important;
+}
+
+.ellipsis.three-line {
+    max-height: 3.6em !important;
+}
+
+/* create the ... */
+.ellipsis:before {
+  /* points in the end */
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+
+/* hide ... if we have text, which is less than or equal to max lines */
+.ellipsis:after {
+    /* points in the end */
+    content: '';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of text */
+    right: 0;
+    /* set width and height */
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    /* bg color = bg color under block */
+    background: white;
+}
 /* /UTILITY */
 
 
@@ -549,6 +523,10 @@ body {
     color: rgb(114,114,115);
 }
 
+.support-colour-bg {
+    background-color: rgb(114,114,115);
+}
+
 .path-color {
     color: #006621;
 }
@@ -576,14 +554,47 @@ body {
     padding: 1em 1.3em !important;
 }
 
- .top-nav .navbar-search > .form-group {
-     height: 50px;
- }
+.top-nav .navbar-search {
+    margin: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
 
- .top-nav .navbar-search > .form-group > input {
-     height: 50px;
- }
+    .navbar-search > .form-group {
+        height: 50px;
+    }
 
+    .navbar-search > .form-group > input {
+        height: 50px;
+        border-radius: 0;
+        border: none;
+        background-color: rgba(0,0,0,0.5);
+        transition: all 400ms;
+    }
+
+        .navbar-search > .form-group > input:focus {
+            background-color: rgba(255,255,255,0.9);
+        }
+    
+        .navbar-search > .form-group > i {
+            line-height: 50px;
+        }
+
+        .navbar-search > .form-group > input:focus + i {
+            color: #23374D;
+        }
+
+    @media (min-width: 768px) {
+        .bottom-nav .navbar-nav > li > a {
+            font-size: 1.5em;
+            padding: 1em 3em;
+            font-weight: 200;
+        }
+    }
+/* /NAVBARS */
+
+
+/* BOOTSTRAP OVERRIDES */
 .navbar {
     border: none;
     border-radius: 0;
@@ -599,36 +610,18 @@ body {
         background-color: inherit !important;
     }
 
-@media (min-width: 768px) {
-    .bottom-nav .navbar-nav > li > a {
-        font-size: 1.5em;
-        padding: 1em 3em;
-        font-weight: 200;
+    .navbar-nav .dropdown-menu {
+        min-width: 100%;
     }
-}
 
-.navbar-nav .dropdown-menu {
-    min-width: 100%;
-}
-
-@media (min-width: 768px) {
-    .navbar-collapse {
-        padding-left: 0;
+    @media (min-width: 768px) {
+        .navbar-collapse {
+            padding-left: 0;
+        }
     }
-}
-/* /NAVBARS */
 
-
-/* BOOTSTRAP OVERRIDES */
 .col-wrapper {
     padding: 0;
-}
-
-.media-body {
-    text-overflow: ellipsis;
-	width: 200px;
-	white-space: nowrap;
-	overflow: hidden;
 }
 
 .modal-header {

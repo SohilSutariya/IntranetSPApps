@@ -1,6 +1,6 @@
 ﻿(function (app) {
 
-    var WelcomeCtrl = ["$scope", "$filter", "$location", "$uibModal", "$sce", "localStorageService", "DataService", "WeatherService", 
+    var WelcomeCtrl = ["$scope", "$filter", "$location", "$uibModal", "$sce", "localStorageService", "DataService", "WeatherService",
 
     function ($scope, $filter, $location, $uibModal, $sce, localStorageService, DataService, WeatherService) {
 
@@ -27,30 +27,6 @@
         ];
         /* /PLACEHOLDER DATA */
 
-        
-        /* WEATHER DATA */
-        var cachedWeather = localStorageService.get("weatherData");
-        if (cachedWeather != null && (Math.abs(Date.now() - cachedWeather.date) / 60000) < 60) {
-            // Cached data exists and is less than an hour old
-            $scope.weatherData = cachedWeather.data;
-        }
-        else {
-            WeatherService
-                .getWeather()
-                .success(function (data) {
-                    console.log("Retrieved weather info successfully: ");
-                    console.log(data);
-
-                    $scope.weatherData = data.query.results.channel;
-                    localStorageService.set("weatherData", { data: $scope.weatherData, date: Date.now() });
-                })
-                .error(function (data) {
-                    console.log("Failed to retrieve weather info: ");
-                    console.log(data);
-                });
-        }
-        /* /WEATHER DATA */
-
 
         /* IMAGE CAROUSEL */
         var slides = $scope.slides = [];
@@ -68,47 +44,90 @@
             $scope.addSlide();
         }
         /* /IMAGE CAROUSEL */
-        
+
+
+        /* ANNOUNCEMENTS */
+        DataService
+            .getSpList("Announcements")
+            .success(function (data) {
+                $scope.announcements = data.d.results;
+            })
+            .error(function () {
+                console.log("Error retrieving announcements");
+            });
+        /* /ANNOUNCEMENTS */
+
+        /* NewsLetters */
+        DataService
+            .getSpList("Newsletters")
+            .success(function (data) {
+                $scope.newsletters = data.d.results;
+            })
+            .error(function () {
+                console.log("Error retrieving Newsletters");
+            });
+        /* /NewsLetters */
+        /* APP LINKS */
+        DataService
+            .getSpList("Applications")
+            .success(function (data) {
+                $scope.appLinks = data.d.results;
+            })
+            .error(function () {
+                console.log("Error retrieving links");
+            });
+        /* /APP LINKS */
+
+
+        /* WEATHER DATA */
+        var cachedWeather = localStorageService.get("weatherData");
+        if (cachedWeather != null && (Math.abs(Date.now() - cachedWeather.date) / 60000) < 60) {
+            // Cached data exists and is less than an hour old
+            $scope.weatherData = cachedWeather.data;
+        }
+        else {
+            DataService
+                .getSpList("WeatherList")
+                .success(function (data) {
+                    WeatherService
+                        .getWeather(data.d.results)
+                        .success(function (data) {
+                            $scope.weatherData = data.query.results.channel;
+                            localStorageService.set("weatherData", { data: $scope.weatherData, date: Date.now() });
+                        })
+                        .error(function (data) {
+                            console.log("Failed to retrieve weather info: ");
+                            console.log(data);
+                        });
+                })
+                .error(function () {
+                    console.log("Error retrieving weatherlist");
+                });
+        }
 
         DataService
-            .getSpLists()
+            .postTest()
             .success(function (data) {
-                console.log("SpLists retrieved successfully: ");
+                console.log("Post success: ");
                 console.log(data);
-                $scope.spLists = data.d.results;
-
-                /* ANNOUNCEMENTS */
-                DataService
-                    .getSpListByName("Announcements", $scope.spLists)
-                    .success(function (data) {
-                        console.log("Successfully retrieved announcements: ");
-                        console.log(data);
-                        $scope.announcements = data.d.results;
-                    })
-                    .error(function () {
-                        console.log("Error retrieving announcements");
-                    });
-                /* /ANNOUNCEMENTS */
-
-
-                /* APP LINKS */
-                DataService
-                    .getSpListByName("Applications", $scope.spLists)
-                    .success(function (data) {
-                        console.log("Successfully retrieved application links: ");
-                        console.log(data);
-                        $scope.appLinks = data.d.results;
-                    })
-                    .error(function () {
-                        console.log("Error retrieving links");
-                    });
-                /* /APP LINKS */
-
             })
             .error(function (data) {
-                console.log("Error retrieving SpLists: ");
+                console.log("Post failed: ");
                 console.log(data);
             });
+        /* /WEATHER DATA */
+
+
+        /* SAFETY REPORTS */
+        DataService
+            .getSpList("SafetyRpt", [{ name: "Status", value: "'Active'" }])
+            .success(function (data) {
+                $scope.safetyReports = data.d.results;
+            })
+            .error(function () {
+                console.log("Error retrieving safety reports");
+            });
+        /* /SAFETY REPORTS */
 
 
         /* MODALS */
@@ -119,33 +138,12 @@
                 size: 'md',
                 resolve: {
                     data: function () {
-                        return item ;
+                        return item;
                     }
                 }
             });
         };
         /* /MODALS */
-
-
-        /* MISC */
-        var getSpList = function (name) {
-
-            var listId = ($filter('filter')($scope.spLists, { Title: name }, true));
-            if (listId.length > 0) {
-                listId = listId[0]["Id"];
-
-                DataService
-                    .getSpListItems(listId)
-                    .success(function (data) {
-                        return data.d.results;
-                    })
-                    .error(function () {
-                        console.log("Error retrieving " + name + " SpList");
-                    });
-            }
-
-        }
-        /* /MISC */
 
 
         /* EVENT LISTENERS */
@@ -157,7 +155,7 @@
 
 
         /* WEATHER ICON MAPPING */
-        $scope.mapWeatherIcon = function(yahooCode) {
+        $scope.mapWeatherIcon = function (yahooCode) {
 
             return WeatherService.mapWeatherIcon(yahooCode);
 

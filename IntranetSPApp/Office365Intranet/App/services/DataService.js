@@ -1,6 +1,6 @@
 ﻿(function (app) {
 
-    var DataService = ["$http", "$filter", "SPContext", 
+    var DataService = ["$http", "$filter", "SPContext",
 
     function ($http, $filter, SPContext) {
 
@@ -9,23 +9,24 @@
             return $http.get(url);
         };
 
-        var getSpListItems = function (listId) {
-            var url = SPContext.appWebUrl + "/_api/SP.AppContextSite(@target)" + "/web/lists(guid'" + listId + "')/items?@target='" + SPContext.hostUrl + "'";
+        // Filters is an optional array parameter in the structure:
+        // [{SPColumnName: "ExampleName", SPColumnValue: "ExampleValue"}]
+        // If value is a string, it should be wrapped in single quotation marks (eg: 'InActive'),
+        // otherwise, if value is literal, it should be stored plain (eg: true)
+        var getSpList = function (name, filters) {
+            var url = SPContext.appWebUrl + "/_api/SP.AppContextSite(@target)" + "/web/lists/getbytitle('" + name + "')/items?@target='" + SPContext.hostUrl + "'&$expand=File";
+
+            if (!angular.isUndefined(filters)) {
+                url += "&$filter=";
+                angular.forEach(filters, function (value, key) {
+                    if (key != 0) {
+                        url += " and "
+                    }
+                    url += "(" + value.name + " eq " + value.value + ")";
+                });
+            }
+
             return $http.get(url);
-        };
-
-        var getSpListByName = function (name, spLists) {
-
-            var listId = ($filter('filter')(spLists, { Title: name }, true));
-            if (listId.length > 0) {
-                listId = listId[0]["Id"];
-            }
-            else {
-                listId = "00000000-0000-0000-0000-000000000000";
-            }
-
-            return getSpListItems(listId);
-
         }
 
         var getSpListItemFileUrl = function (listId, itemId) {
@@ -39,9 +40,36 @@
         };
 
         var getTest = function () {
-            var url = SPContext.appWebUrl + "/_api/SP.AppContextSite(@target)" + "/web/Lists(guid'c6260ccb-4f58-4fa6-ac31-e1a37369a190')/Items(5)?@target='" + SPContext.hostUrl + "'";
+            var url = SPContext.appWebUrl + "/_api/SP.AppContextSite(@target)" + "/web/Lists/GetByTitle('WeatherList')/Items?@target='" + SPContext.hostUrl + "'";
             return $http.get(url);
         };
+
+        var postTest = function () {
+            // Get FormDigestValue by querying contextinfo
+            // Use FormDigestValue to add item to list
+            return $http.post(SPContext.appWebUrl + "/_api/contextinfo")
+                .success(function (data) {
+                    var url = SPContext.appWebUrl + "/_api/SP.AppContextSite(@target)" + "/web/Lists/GetByTitle('WeatherList')/Items?@target='" + SPContext.hostUrl + "'";
+
+                    var body = {
+                        '__metadata': { 'type': 'SP.Data.WeatherListListItem' },
+                        'Title': "Christmas Island",
+                        'Country': "Australia"
+                    };
+
+                    var headers = {
+                        'Accept': 'application/json;odata=verbose',
+                        'Content-Type': 'application/json;odata=verbose;',
+                        'X-RequestDigest': data.d.GetContextWebInformation.FormDigestValue
+                    };
+
+                    return $http.post(url, body, { headers: headers });
+                })
+                .error(function (data) {
+                    console.log("Failed to retrieve contextinfo: ");
+                    console.log(data);
+                });
+        }
 
         var getSearchResults = function (q, pageNo, pageSize, refiners) {
             var startRow = (pageNo - 1) * pageSize;
@@ -97,18 +125,17 @@
                 url += refinerStr;
             }
 
-            console.log("Hitting " + url);
             return $http.get(url);
         };
 
         return {
             getSpLists: getSpLists,
-            getSpListItems: getSpListItems,
-            getSpListByName: getSpListByName,
+            getSpList: getSpList,
             getSpListItemFileUrl: getSpListItemFileUrl,
             getCurrentUser: getCurrentUser,
             getTest: getTest,
-            getSearchResults: getSearchResults
+            getSearchResults: getSearchResults,
+            postTest: postTest
         };
 
     }];

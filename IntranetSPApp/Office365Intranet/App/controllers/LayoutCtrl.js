@@ -1,6 +1,6 @@
 ﻿(function (app) {
 
-    var LayoutCtrl = ["$scope", "DataService", "$filter", 
+    var LayoutCtrl = ["$scope", "DataService", "$filter",
 
     function ($scope, DataService, $filter) {
 
@@ -8,17 +8,9 @@
         $scope.dropdown = [];
 
         DataService
-            .getSpLists()
+            .getSpList("MenuNav")
             .success(function (data) {
-                DataService
-                    .getSpListByName("MenuNav", data.d.results)
-                    .success(function (data) {
-                        console.log("Menu nav retrieved successfully: ");
-                        console.log(data);
-
-                        $scope.dropdown = data.d.results;
-                        console.log($scope.rootNavMenus);
-                    })
+                $scope.dropdown = data.d.results;
             });
 
         $scope.updateSearch = function () {

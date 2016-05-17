@@ -1,16 +1,29 @@
 ﻿(function (app) {
 
-    var WeatherService = ["$http", "localStorageService", 
+    var WeatherService = ["$http", "localStorageService",
 
         function ($http, localStorageService) {
-            var getWeather = function () {
 
-                return $http.jsonp("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%2C%20link%2C%20location%20from%20weather.forecast%20where%20(woeid%3D1326075%20or%20woeid%3D1100661%20or%20woeid%3D1521894%20or%20woeid%3D1103816%20or%20woeid%3D1104192%20or%20woeid%3D1105225%20or%20woeid%3D1098081)%20and%20u%3D'c'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK")
+            // Retrieve weather from Yahoo API
+            var getWeather = function (locations) {
+
+                var locationStr = "";
+
+                angular.forEach(locations, function (value, key) {
+                    if (key != 0) {
+                        locationStr += "%20or";
+                    }
+
+                    locationStr += "%20text%3D%22" + value.Title + "%2C%20" + value.Country + "%22";
+
+                });
+
+                return $http.jsonp("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%2C%20link%2C%20location%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where" + locationStr + ")%20and%20u%3D'c'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK")
 
             };
-            
-            var mapWeatherIcon = function (yahooCode) {
 
+            // Map yahoo weather code to weathericon glyphicon class
+            var mapWeatherIcon = function (yahooCode) {
                 var iconName = "";
 
                 switch (yahooCode) {

@@ -8,6 +8,6 @@
     <ProjectItemFile Source="Slideshow\2.JPG" Target="Images\Slideshow\" Type="ElementFile" />
     <ProjectItemFile Source="Slideshow\3.JPG" Target="Images\Slideshow\" Type="ElementFile" />
     <ProjectItemFile Source="logo.png" Target="Images\" Type="ElementFile" />
-    <ProjectItemFile Source="weather.jpg" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="graph.png" Target="Images\" Type="ElementFile" />
   </Files>
 </ProjectItem>
