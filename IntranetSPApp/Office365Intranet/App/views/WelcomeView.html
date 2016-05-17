@@ -176,22 +176,27 @@
             
                
                    
-            <div class="card calendar shadow">
-                <h5 class="header">
-                    <span class="glyphicon glyphicon-calendar"></span> Quarterly NewsLetter (PORTAL)
-                </h5>
-                <a ng-repeat="news in newsletters" ng-href="http://google.com" target="_blank">
-                    <div class="clearfix">
-                        <div>
-                            <h6 class="header">{{ news.Title }}</h6>
-                        </div>
-                        <div>
-                            <img ng-src="{{ news.Thumbnail.Url }}" class="sport-image"></img>
-                            
-                        </div>
-                    </div>
-                </a>
+            <div class="card news shadow">
+                <h4 class="header">
+                    <span class="glyphicon glyphicon-tasks"></span> Quarterly NewsLetter (PORTAL)
+                </h4>
                 
+                    <div ng-repeat="news in newsletters" class="text-center">
+                        <a ng-href="{{news.File.ServerRelativeUrl}}" target="_blank">
+                            <div class="img-rounded">
+                                <img ng-src="{{ news.Thumbnail.Url }}" class="img-thumbnail" />
+                            </div>
+                            <div>
+
+                                <h6 class="header">{{ news.Title }}</h6>
+
+                            </div>
+                            <span class="clearfix">
+
+                            </span>
+                        </a>
+                    </div>
+                           
             </div>
                   
                 

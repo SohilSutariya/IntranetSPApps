@@ -67,6 +67,7 @@
                 console.log("Error retrieving Newsletters");
             });
         /* /NewsLetters */
+
         /* APP LINKS */
         DataService
             .getSpList("Applications")
