@@ -173,10 +173,9 @@
             <!-- Calendar -->
 
             <!--NewsLetters--->
-            
-               
+                        
                    
-            <div class="card news shadow">
+            <div class="card news shadow newsletters">
                 <h4 class="header">
                     <span class="glyphicon glyphicon-tasks"></span> Quarterly NewsLetter (PORTAL)
                 </h4>
@@ -184,16 +183,14 @@
                     <div ng-repeat="news in newsletters" class="text-center">
                         <a ng-href="{{news.File.ServerRelativeUrl}}" target="_blank">
                             <div class="img-rounded">
-                                <img ng-src="{{ news.Thumbnail.Url }}" class="img-thumbnail" />
+                                <img ng-src="{{ news.Thumbnail.Url }}" class="img-thumbnail  newsletters-image" />
                             </div>
                             <div>
-
-                                <h6 class="header">{{ news.Title }}</h6>
-
+                                <h6 class="modal-header">{{ news.Title }}</h6>
                             </div>
-                            <span class="clearfix">
-
-                            </span>
+                           <span class="clearfix">
+                                
+                           </span>
                         </a>
                     </div>
                            

@@ -676,4 +676,14 @@ body {
 .pagination > li > a, .pagination > li > span {
     color: #E65B17;
 }
+
+.newsletters-image{
+    max-height : 210px;
+
+}
+
+.newsletters{
+    max-height: 330px;
+    margin-bottom: 2em;
+}
 /* /BOOTSTRAP OVERRIDES */

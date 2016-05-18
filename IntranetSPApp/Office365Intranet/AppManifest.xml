@@ -4,7 +4,7 @@
      Name="intranet"
      ProductID="{91212a4d-e65a-4e32-9a99-f2cac64e4f70}"
      Version="1.0.0.0"
-     SharePointMinVersion="15.0.0.0"
+     SharePointMinVersion="16.0.0.0"
 >
   <Properties>
     <StartPage>~appWebUrl/launcher.html?{StandardTokens}</StartPage>
