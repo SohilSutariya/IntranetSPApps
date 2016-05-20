@@ -1,6 +1,6 @@
 ﻿(function (app) {
 
-    var WelcomeCtrl = ["$scope", "$filter", "$location", "$uibModal", "$sce", "localStorageService", "DataService", "WeatherService",
+    var WelcomeCtrl = ["$scope", "$filter", "$location", "$uibModal", "$sce", "localStorageService", "DataService", "WeatherService", 
 
     function ($scope, $filter, $location, $uibModal, $sce, localStorageService, DataService, WeatherService) {
 
@@ -44,18 +44,18 @@
             $scope.addSlide();
         }
         /* /IMAGE CAROUSEL */
+        
 
-
-        /* ANNOUNCEMENTS */
+        /* SP ALERTS */
         DataService
-            .getSpList("Announcements")
+            .getSpList("Alerts")
             .success(function (data) {
-                $scope.announcements = data.d.results;
+                $scope.spAlerts = data.d.results;
             })
             .error(function () {
-                console.log("Error retrieving announcements");
+                console.log("Error retrieving alerts");
             });
-        /* /ANNOUNCEMENTS */
+        /* /SP ALERTS */
 
         /* NewsLetters */
         DataService
@@ -105,17 +105,6 @@
                     console.log("Error retrieving weatherlist");
                 });
         }
-
-        DataService
-            .postTest()
-            .success(function (data) {
-                console.log("Post success: ");
-                console.log(data);
-            })
-            .error(function (data) {
-                console.log("Post failed: ");
-                console.log(data);
-            });
         /* /WEATHER DATA */
 
 
@@ -131,15 +120,77 @@
         /* /SAFETY REPORTS */
 
 
+        /* CEO MESSAGE */
+        DataService
+            .getSpList("CEOMsg", [{ name: "Status", value: "'Active'" }])
+            .success(function (data) {
+                if (!angular.isUndefined(data.d.results) && data.d.results.length > 0) {
+                    $scope.ceoMsg = {
+                        title: data.d.results[0].Title,
+                        body: $sce.trustAsHtml(data.d.results[0].Body)
+                    };
+
+
+                }
+            })
+            .error(function (data) {
+                console.log("Error retrieving CEO Message: ");
+                console.log(data);
+            });
+        /* /CEO MESSAGE */
+
+
+        /* COMPANY LINKS */
+        DataService
+            .getSpList("SiteLinks")
+            .success(function (data) {
+                console.log("Successfully retrieved SiteLinks: ");
+                console.log(data);
+
+                $scope.siteLinks = data.d.results;
+            })
+            .error(function (data) {
+                console.log("Failed to retrieve SiteLinks: ");
+                console.log(data);
+            });
+        /* /COMPANY LINKS */
+
+
         /* MODALS */
-        $scope.openAnnouncement = function (item) {
+        $scope.openSpAlert = function (spAlert) {
             var modalInstance = $uibModal.open({
-                templateUrl: 'announcementModal.html',
-                controller: 'AnnouncementModalCtrl',
+                templateUrl: 'spAlertModal.html',
+                controller: 'SpAlertModalCtrl',
+                size: 'md',
+                resolve: {
+                    spAlert: function () {
+                        return spAlert ;
+                    }
+                }
+            });
+        };
+
+        $scope.openCeoMsg = function () {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'ceoMsgModal.html',
+                controller: 'CeoMsgModalCtrl',
                 size: 'md',
                 resolve: {
                     data: function () {
-                        return item;
+                        return $scope.ceoMsg;
+                    }
+                }
+            });
+        };
+
+        $scope.openPopupLink = function (link) {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'popupLinkModal.html',
+                controller: 'PopupLinkModalCtrl',
+                size: 'md',
+                resolve: {
+                    popupLink: function () {
+                        return link;
                     }
                 }
             });
@@ -155,8 +206,15 @@
         /* /EVENT LISTENERS */
 
 
+        /* MISC */
+        $scope.isPopUp = function (item) {
+            return item.Link_x0020_Type == "Pop up";
+        }
+        /* /MISC */
+
+
         /* WEATHER ICON MAPPING */
-        $scope.mapWeatherIcon = function (yahooCode) {
+        $scope.mapWeatherIcon = function(yahooCode) {
 
             return WeatherService.mapWeatherIcon(yahooCode);
 

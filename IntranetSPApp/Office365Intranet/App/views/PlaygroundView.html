@@ -1,0 +1,33 @@
+﻿<div ng-controller="Playground">
+    <h5>Search for user and add new list item AssignedTo user to Test List 2</h5>
+    <ui-select ng-model="selected.value" on-select="addItem($item, $model)">
+        <ui-select-match>
+            <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="spUser in spUsers track by spUser.id"
+                           refresh="refreshSpUsers($select.search)"
+                           refresh-delay="1000">
+            <span ng-bind="spUser.name"></span>
+        </ui-select-choices>
+    </ui-select>
+
+    <h5>Get the possible choices for Types column in 'test list'</h5>
+    <ui-select ng-model="selectedChoice.value" on-select="selectedTrigger($item, $model)">
+        <ui-select-match>
+            <span ng-bind="$select.selected"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="choice in typesChoices | filter: $select.search">
+            <span ng-bind="choice"></span>
+        </ui-select-choices>
+    </ui-select>
+
+    <h5>Get the lookup list for Safety Report column in 'test list'</h5>
+    <ui-select ng-model="selectedRpt.Title" on-select="rptSelected($item, $model)">
+        <ui-select-match>
+            <span ng-bind="$select.selected.Title"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="rpt in rptList track by rpt.Id">
+            <span ng-bind="rpt.Title"></span>
+        </ui-select-choices>
+    </ui-select>
+</div>

@@ -10,10 +10,14 @@
     <File Path="App\launcher.js" Url="App/launcher.js" ReplaceContent="TRUE" />
     <File Path="App\filters\htmlFilter.js" Url="App/filters/htmlFilter.js" ReplaceContent="TRUE" />
     <File Path="App\controllers\LayoutCtrl.js" Url="App/controllers/LayoutCtrl.js" ReplaceContent="TRUE" />
-    <File Path="App\controllers\modals\AnnouncementModalCtrl.js" Url="App/controllers/modals/AnnouncementModalCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\controllers\modals\SpAlertModalCtrl.js" Url="App/controllers/modals/SpAlertModalCtrl.js" ReplaceContent="TRUE" />
     <File Path="App\views\SearchView.html" Url="App/views/SearchView.html" ReplaceContent="TRUE" />
     <File Path="App\controllers\SearchCtrl.js" Url="App/controllers/SearchCtrl.js" ReplaceContent="TRUE" />
     <File Path="App\util\array-helper.js" Url="App/util/array-helper.js" ReplaceContent="TRUE" />
     <File Path="App\services\WeatherService.js" Url="App/services/WeatherService.js" ReplaceContent="TRUE" />
+    <File Path="App\controllers\PlaygroundCtrl.js" Url="App/controllers/PlaygroundCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\views\PlaygroundView.html" Url="App/views/PlaygroundView.html" ReplaceContent="TRUE" />
+    <File Path="App\controllers\modals\CeoMsgModalCtrl.js" Url="App/controllers/modals/CeoMsgModalCtrl.js" ReplaceContent="TRUE" />
+    <File Path="App\controllers\modals\PopupLinkModalCtrl.js" Url="App/controllers/modals/PopupLinkModalCtrl.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

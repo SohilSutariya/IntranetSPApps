@@ -1,6 +1,6 @@
 ﻿(function (app) {
 
-    var LayoutCtrl = ["$scope", "DataService", "$filter",
+    var LayoutCtrl = ["$scope", "DataService", "$filter", 
 
     function ($scope, DataService, $filter) {
 

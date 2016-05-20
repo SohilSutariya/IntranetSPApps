@@ -2,7 +2,7 @@
 
 (function () {
 
-    var app = angular.module("app", ["ngRoute", "ngCookies", "ngAnimate", "LocalStorageModule", "ui.bootstrap", "ui.bootstrap.tpls", "angular-loading-bar"]);
+    var app = angular.module("app", ["ngRoute", "ngCookies", "ngAnimate", "ngSanitize", "LocalStorageModule", "ui.bootstrap", "ui.bootstrap.tpls", "angular-loading-bar", "ui.select"]);
 
     var config = ["$routeProvider", "$httpProvider", "cfpLoadingBarProvider", 
 
@@ -15,6 +15,10 @@
                 .when("/search", 
                     {
                         templateUrl: "App/views/SearchView.html"
+                    })
+                .when("/playground",
+                    {
+                        templateUrl: "App/views/PlaygroundView.html"
                     })
                 .otherwise(
                     { redirectTo: "/welcome" });

@@ -11,10 +11,14 @@
     <ProjectItemFile Source="App\launcher.js" Target="App\" Type="ElementFile" />
     <ProjectItemFile Source="App\filters\htmlFilter.js" Target="App\filters\" Type="ElementFile" />
     <ProjectItemFile Source="App\controllers\LayoutCtrl.js" Target="App\controllers\" Type="ElementFile" />
-    <ProjectItemFile Source="App\controllers\modals\AnnouncementModalCtrl.js" Target="App\controllers\modals\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\modals\SpAlertModalCtrl.js" Target="App\controllers\modals\" Type="ElementFile" />
     <ProjectItemFile Source="App\views\SearchView.html" Target="App\views\" Type="ElementFile" />
     <ProjectItemFile Source="App\controllers\SearchCtrl.js" Target="App\controllers\" Type="ElementFile" />
     <ProjectItemFile Source="App\util\array-helper.js" Target="App\util\" Type="ElementFile" />
     <ProjectItemFile Source="App\services\WeatherService.js" Target="App\services\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\PlaygroundCtrl.js" Target="App\controllers\" Type="ElementFile" />
+    <ProjectItemFile Source="App\views\PlaygroundView.html" Target="App\views\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\modals\CeoMsgModalCtrl.js" Target="App\controllers\modals\" Type="ElementFile" />
+    <ProjectItemFile Source="App\controllers\modals\PopupLinkModalCtrl.js" Target="App\controllers\modals\" Type="ElementFile" />
   </Files>
 </ProjectItem>

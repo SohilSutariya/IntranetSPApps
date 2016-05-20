@@ -14,5 +14,7 @@
     <File Path="Content\font\weathericons-regular-webfont.woff" Url="Content/font/weathericons-regular-webfont.woff" ReplaceContent="TRUE" />
     <File Path="Content\font\weathericons-regular-webfont.woff2" Url="Content/font/weathericons-regular-webfont.woff2" ReplaceContent="TRUE" />
     <File Path="Content\font\weathericons-regular-webfont.eot" Url="Content/font/weathericons-regular-webfont.eot" ReplaceContent="TRUE" />
+    <File Path="Content\select.css" Url="Content/select.css" ReplaceContent="TRUE" />
+    <File Path="Content\select.min.css" Url="Content/select.min.css" ReplaceContent="TRUE" />
   </Module>
 </Elements>

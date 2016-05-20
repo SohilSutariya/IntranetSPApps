@@ -10,11 +10,11 @@
     <RootNamespace>Office365Intranet</RootNamespace>
     <AssemblyName>Office365Intranet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetOfficeVersion>16.1</TargetOfficeVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
-    <MinimumOfficeToolsVersion>12.2</MinimumOfficeToolsVersion>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>11.1</MinimumOfficeToolsVersion>
     <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
     <ProjectMode>SharePointApp</ProjectMode>
     <AppFeaturePartId>{57d37d4b-1e13-445b-91af-d68f68c474ea}</AppFeaturePartId>
@@ -60,10 +60,13 @@
       <SharePointProjectItemId>{91212a4d-e65a-4e32-9a99-f2cac64e4f69}</SharePointProjectItemId>
     </None>
     <Content Include="App\app.js" />
+    <Content Include="App\controllers\modals\CeoMsgModalCtrl.js" />
+    <Content Include="App\controllers\modals\PopupLinkModalCtrl.js" />
+    <Content Include="App\controllers\PlaygroundCtrl.js" />
     <Content Include="App\controllers\SearchCtrl.js" />
     <Content Include="App\launcher.js" />
     <Content Include="App\controllers\LayoutCtrl.js" />
-    <Content Include="App\controllers\modals\AnnouncementModalCtrl.js" />
+    <Content Include="App\controllers\modals\SpAlertModalCtrl.js" />
     <Content Include="App\controllers\WelcomeCtrl.js" />
     <Content Include="App\filters\htmlFilter.js" />
     <Content Include="App\services\DataService.js" />
@@ -71,10 +74,13 @@
     <Content Include="App\services\WeatherService.js" />
     <Content Include="App\util\array-helper.js" />
     <Content Include="App\util\jquery-extensions.js" />
+    <Content Include="App\views\PlaygroundView.html" />
     <Content Include="App\views\SearchView.html" />
     <Content Include="App\views\WelcomeView.html" />
     <Content Include="Content\loading-bar.css" />
     <Content Include="Content\loading-bar.min.css" />
+    <Content Include="Content\select.css" />
+    <Content Include="Content\select.min.css" />
     <Content Include="Content\weather-css\weather-icons-wind.css" />
     <Content Include="Content\weather-css\weather-icons-wind.min.css" />
     <Content Include="Content\weather-css\weather-icons.css" />
@@ -93,6 +99,8 @@
     <Content Include="Scripts\Angular\angular-cookies.min.js" />
     <Content Include="Scripts\Angular\angular-local-storage.js" />
     <Content Include="Scripts\Angular\angular-local-storage.min.js" />
+    <Content Include="Scripts\Angular\angular-sanitize.js" />
+    <Content Include="Scripts\Angular\angular-sanitize.min.js" />
     <Content Include="Scripts\Angular\loading-bar.js" />
     <Content Include="Scripts\Angular\loading-bar.min.js" />
     <Content Include="Scripts\Bootstrap\css\bootstrap-theme.css" />
@@ -130,6 +138,8 @@
     <Content Include="Scripts\jquery\jquery-2.2.2.intellisense.js" />
     <Content Include="Scripts\jquery\jquery-2.2.2.js" />
     <Content Include="Scripts\jquery\jquery-2.2.2.min.js" />
+    <Content Include="Scripts\Angular\select.js" />
+    <Content Include="Scripts\Angular\select.min.js" />
     <Content Include="Scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>

@@ -15,5 +15,7 @@
     <ProjectItemFile Source="font\weathericons-regular-webfont.woff" Target="Content\font\" Type="ElementFile" />
     <ProjectItemFile Source="font\weathericons-regular-webfont.woff2" Target="Content\font\" Type="ElementFile" />
     <ProjectItemFile Source="font\weathericons-regular-webfont.eot" Target="Content\font\" Type="ElementFile" />
+    <ProjectItemFile Source="select.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="select.min.css" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

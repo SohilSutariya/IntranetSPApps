@@ -39,5 +39,9 @@
     <File Path="Scripts\Angular\loading-bar.min.js" Url="Scripts/Angular/loading-bar.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\Angular\angular-local-storage.min.js" Url="Scripts/Angular/angular-local-storage.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\Angular\angular-local-storage.js" Url="Scripts/Angular/angular-local-storage.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\select.js" Url="Scripts/Angular/select.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\select.min.js" Url="Scripts/Angular/select.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-sanitize.min.js" Url="Scripts/Angular/angular-sanitize.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-sanitize.js" Url="Scripts/Angular/angular-sanitize.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

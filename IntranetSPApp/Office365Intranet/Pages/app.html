@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Barminco Intranet</title>
-
+    <title>Barminco Intranet</title>    
+    
     <!-- Load angular script in head for ng-cloak to be effective -->
     <script src="Scripts/Angular/angular.js"></script>
 
@@ -15,6 +15,7 @@
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
     <link href="Content/App.css" rel="stylesheet" />
     <link href="Content/loading-bar.css" rel="stylesheet" />
+    <link href="Content/select.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -135,11 +136,11 @@
     </div>
 
     <footer class="footer">
-        <div class="footer-content primary-colour-bg">
-            <p class="text-muted">
-                © Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            </p>
-        </div>
+            <div class="footer-content primary-colour-bg">
+                <p class="text-muted">
+                    © Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                </p>
+            </div>
     </footer>
 
     <!-- /GENERAL SCRIPTS -->
@@ -148,6 +149,7 @@
     <script src="App/util/jquery-extensions.js"></script>
     <script src="App/util/array-helper.js"></script>
     <!-- /GENERAL SCRIPTS -->
+
     <!-- ANGULAR SCRIPTS -->
     <script src="Scripts/Angular/angular-route.js"></script>
     <script src="Scripts/Angular/angular-cookies.js"></script>
@@ -156,17 +158,23 @@
     <script src="Scripts/Angular/ui-bootstrap-tpls.js"></script>
     <script src="Scripts/Angular/ui-bootstrap.js"></script>
     <script src="Scripts/Angular/loading-bar.js"></script>
+    <script src="Scripts/Angular/select.js"></script>
+    <script src="Scripts/Angular/angular-sanitize.js"></script>
     <!-- /ANGULAR SCRIPTS -->
+
     <!-- ANGULAR APPLICATION -->
     <script src="App/app.js"></script>
     <script src="App/filters/htmlFilter.js"></script>
     <script src="App/services/DataService.js"></script>
     <script src="App/services/WeatherService.js"></script>
     <script src="App/services/SPContext.js"></script>
-    <script src="App/controllers/modals/AnnouncementModalCtrl.js"></script>
+    <script src="App/controllers/modals/SpAlertModalCtrl.js"></script>
+    <script src="App/controllers/modals/CeoMsgModalCtrl.js"></script>
+    <script src="App/controllers/modals/PopupLinkModalCtrl.js"></script>
     <script src="App/controllers/LayoutCtrl.js"></script>
     <script src="App/controllers/WelcomeCtrl.js"></script>
     <script src="App/controllers/SearchCtrl.js"></script>
+    <script src="App/controllers/PlaygroundCtrl.js"></script>
     <!-- /ANGULAR APPLICATION -->
 
 </body>

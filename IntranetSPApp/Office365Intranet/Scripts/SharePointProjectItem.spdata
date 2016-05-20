@@ -40,5 +40,9 @@
     <ProjectItemFile Source="Angular\loading-bar.min.js" Target="Scripts\Angular\" Type="ElementFile" />
     <ProjectItemFile Source="Angular\angular-local-storage.min.js" Target="Scripts\Angular\" Type="ElementFile" />
     <ProjectItemFile Source="Angular\angular-local-storage.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\select.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\select.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-sanitize.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-sanitize.js" Target="Scripts\Angular\" Type="ElementFile" />
   </Files>
 </ProjectItem>
