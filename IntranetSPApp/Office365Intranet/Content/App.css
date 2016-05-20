@@ -436,6 +436,16 @@ body {
         height: 100%;
     }
 
+   .newsletters-image{
+    max-height : 210px;
+    box-shadow: 0 0 5px black;
+}
+
+.newsletters{
+    max-height: 330px;
+    margin-bottom: 2em;
+}
+
 .ellipsis {
     /* styles for ellipsis */ 
     /* hide text if it more than N lines  */
@@ -677,13 +687,4 @@ body {
     color: #E65B17;
 }
 
-.newsletters-image{
-    max-height : 210px;
-    box-shadow: 0 0 30px black;
-}
-
-.newsletters{
-    max-height: 330px;
-    margin-bottom: 2em;
-}
 /* /BOOTSTRAP OVERRIDES */
