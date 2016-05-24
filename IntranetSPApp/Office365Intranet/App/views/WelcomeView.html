@@ -4,70 +4,63 @@
 
         <div class="col-md-8 col-lg-9 col-wrapper">
             <div class="col-lg-push-3 col-lg-9 col-md-12">
-                <!-- CEO Message -->
-                <div class="card ceo-message shadow" ng-click="openCeoMsg()">
+                <!--Contacts--->
+                <div class="safety-graph card shadow">
+                    <h5 class="header ">
+                        <span class="glyphicon glyphicon-user"></span> Contact Details
+                    </h5>
+
                     <div class="row">
                         <div class="img-container col-sm-4">
-                            <img src="http://s.wsj.net/public/resources/images/OB-XJ399_barmin_E_20130507002211.jpg" class="img-responsive" />
+                            <p>
+                                Please contact Help Desk for any queries,<br /> Please submit them via email to <br /> helpdesk@barmico.com.au<br />
+                                <br />
+                                Opening Hours : 8:30 AM to 5:00 PM (AWST)
+                            </p>
                         </div>
                         <div class="col-sm-8">
-                            <h4 class="header">{{ceoMsg.title}}</h4>
-                            <div class="ten-line ellipsis" ng-bind-html="ceoMsg.body">
-                            </div>
+                            <h4 class="header">Contacts will be displayed here..</h4>
+                            <!--<div class="ten-line ellipsis" ng-bind-html="ceoMsg.body">
+                </div>-->
                         </div>
                     </div>
+
                 </div>
-                <!-- CEO Message -->
+                <!--Contacts--->
 
                 <!-- Image Carousel -->
-                <div class="gallery">
-                    <uib-carousel class="support-colour-bg" active="0" interval="5000">
+                <div class="gallery shadow card">
+                    <!--<uib-carousel class="support-colour-bg" active="0" interval="5000">
                         <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <img class="img-responsive img-rounded" ng-src="{{slide.image}}" style="margin:auto;">
                         </uib-slide>
-                    </uib-carousel>
+                    </uib-carousel>-->
+
+                    <slick class="slider" settings="slickConfig" dots="true" next-arrow=".my-slick-right" prev-arrow=".my-slick-left">
+                        <div ng-repeat="slide in slides track by $index">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img class="img-responsive" ng-src="{{ slide.imgUrl }}" />
+                                </div>
+                                <div class="col-sm-8 secondary-text">
+                                    <h4 class="primary-text">{{ slide.title }}</h4>
+                                    <p>{{ slide.text }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </slick>
+
+                    <a href class="my-slick-left">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+
+                    <a href class="my-slick-right">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
                 <!-- /Image Carousel -->
 
-                <!-- Safety Stats -->
-                <div class="safety-stats row">
-                    <div class="col-sm-6">
-                        <div class="safety-graph card shadow">
-                            <h5 class="header">
-                                <span class="glyphicon glyphicon-signal"></span>
-                                Safety Statistics
-                            </h5>
-                            <hr />
-                            <a href>
-                                <img src="../Intranet/Images/graph.png" class="img-responsive" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="safety-reports card shadow">
-                            <h5 class="header">
-                                <span class="glyphicon glyphicon-signal"></span>
-                                Safety Reports
-                            </h5>
-                            <hr />
-                            <ul class="media-list">
-                                <li class="media" ng-repeat="report in safetyReports">
-                                    <div class="media-left">
-                                        <a ng-href="{{report.File.ServerRelativeUrl}}">
-                                            <img class="media-object" ng-src="{{report.Thumbnail_x0020_Image.Url}}" alt="Generic placeholder image" width="64">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a ng-href="{{report.File.ServerRelativeUrl}}">
-                                            <h5 class="media-heading">{{report.Title}}</h5>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Safety Stats -->
+                
             </div>
 
             <div class="col-lg-pull-9 col-lg-3 col-md-12">
@@ -150,54 +143,78 @@
             </div>
             <!-- /Application Links-->
 
-            <!-- Calendar -->
-            <!--<div class="card calendar shadow">
-                <h5 class="header">
-                    <span class="glyphicon glyphicon-calendar"></span> Upcoming Events
-                </h5>
-                <ul>
-                    <li ng-repeat="event in calendar">
-                        <a href>
-                            <div class="row">
-                                <div class="col-sm-3">{{ event.date }}</div>
-                                <div class="col-sm-9">{{ event.description }}</div>
-                            </div>
-                        </a>
-                        <hr ng-if="!$last" />
-                    </li>
-                </ul>
-            </div>-->
-            <!-- Calendar -->
-
             <!--NewsLetters--->
-               <div class="card news shadow newsletters">
-                <h4 class="header">
-                    <span class="glyphicon glyphicon-tasks"></span> Quarterly NewsLetter (PORTAL)
-                </h4>
-
+            <div class="safety-graph card shadow">
+                <h5 class="header ">
+                    <span class="glyphicon glyphicon-tasks"></span> Quarterly NewsLetter - [ PORTAL ]
+                </h5>
                 <div ng-repeat="news in newsletters" class="text-center">
                     <a ng-href="{{news.File.ServerRelativeUrl}}" target="_blank">
                         <div class="img-rounded">
                             <img ng-src="{{ news.Thumbnail.Url }}" class="img-thumbnail  newsletters-image" />
                         </div>
                         <div>
-                            <h6 class="modal-header">{{ news.Title }}</h6>
+                            <h6 class="newsletters-header">{{ news.Title }}</h6>
                         </div>
-                        <span class="clearfix">
-
-                        </span>
                     </a>
                 </div>
-
             </div>
-          <!--NewsLetters--->
+            <!--NewsLetters--->
+
+            <!-- Commodity -->
+            <div class="commodity-info card shadow">
+                <h5 class="header">
+                    <span class="glyphicon glyphicon-stats"></span> Commodity Info
+                </h5>
+
+                <a ng-href="{{commodityUrl}}" data-lightbox="commodity-info">
+                    <img ng-src="{{commodityUrl}}" class="img-responsive" />
+                </a>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>From Date</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="df" is-open="popupDf.opened" datepicker-options="dateOptions" show-button-bar="false" ng-required="true" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="openDf()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>To Date</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popupDt.opened" datepicker-options="dateOptions" show-button-bar="false" ng-required="true" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="openDt()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Commodity</label>
+                        <ui-select ng-model="selected.value">
+                            <ui-select-match>
+                                <span ng-bind="$select.selected.name"></span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+                                <span ng-bind="item.name"></span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+
+                    <div class="col-sm-3 col-sm-offset-3">
+                        <button type="button" class="btn btn-primary btn-block commodity-btn" ng-click="updateCommodityUrl()">Go!</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /Commodity -->
 
             <!-- Youtube Embed -->
-            <!--<div class="row" ng-show="embedUrl">-->
-            <div class="videowrapper">
-                <!--<iframe ng-src="{{ embedUrl }}" frameborder="0" allowfullscreen></iframe> -->
-                <iframe src="https://www.youtube.com/embed/c7nRTF2SowQ" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <!--<div class="videowrapper">
+                <iframe ng-src="{{ embedUrl }}" frameborder="0" allowfullscreen></iframe>
+            </div>-->
             <!-- /Youtube Embed -->
         </div>
 

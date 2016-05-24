@@ -2,7 +2,7 @@
 
 (function () {
 
-    var app = angular.module("app", ["ngRoute", "ngCookies", "ngAnimate", "ngSanitize", "LocalStorageModule", "ui.bootstrap", "ui.bootstrap.tpls", "angular-loading-bar", "ui.select"]);
+    var app = angular.module("app", ["ngRoute", "ngCookies", "ngAnimate", "ngSanitize", "LocalStorageModule", "ui.bootstrap", "ui.bootstrap.tpls", "angular-loading-bar", "ui.select", "slickCarousel"]);
 
     var config = ["$routeProvider", "$httpProvider", "cfpLoadingBarProvider", 
 

@@ -44,5 +44,11 @@
     <ProjectItemFile Source="Angular\select.min.js" Target="Scripts\Angular\" Type="ElementFile" />
     <ProjectItemFile Source="Angular\angular-sanitize.min.js" Target="Scripts\Angular\" Type="ElementFile" />
     <ProjectItemFile Source="Angular\angular-sanitize.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="lightbox.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="lightbox.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-slick.min.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="Angular\angular-slick.js" Target="Scripts\Angular\" Type="ElementFile" />
+    <ProjectItemFile Source="slick.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="slick.min.js" Target="Scripts\" Type="ElementFile" />
   </Files>
 </ProjectItem>

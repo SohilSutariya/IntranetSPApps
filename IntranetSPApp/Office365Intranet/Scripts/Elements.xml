@@ -43,5 +43,11 @@
     <File Path="Scripts\Angular\select.min.js" Url="Scripts/Angular/select.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\Angular\angular-sanitize.min.js" Url="Scripts/Angular/angular-sanitize.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\Angular\angular-sanitize.js" Url="Scripts/Angular/angular-sanitize.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\lightbox.js" Url="Scripts/lightbox.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\lightbox.min.js" Url="Scripts/lightbox.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-slick.min.js" Url="Scripts/Angular/angular-slick.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\Angular\angular-slick.js" Url="Scripts/Angular/angular-slick.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\slick.js" Url="Scripts/slick.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\slick.min.js" Url="Scripts/slick.min.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

@@ -16,5 +16,14 @@
     <File Path="Content\font\weathericons-regular-webfont.eot" Url="Content/font/weathericons-regular-webfont.eot" ReplaceContent="TRUE" />
     <File Path="Content\select.css" Url="Content/select.css" ReplaceContent="TRUE" />
     <File Path="Content\select.min.css" Url="Content/select.min.css" ReplaceContent="TRUE" />
+    <File Path="Content\lightbox.css" Url="Content/lightbox.css" ReplaceContent="TRUE" />
+    <File Path="Content\lightbox.min.css" Url="Content/lightbox.min.css" ReplaceContent="TRUE" />
+    <File Path="Content\slick.css" Url="Content/slick.css" ReplaceContent="TRUE" />
+    <File Path="Content\fonts\slick.eot" Url="Content/fonts/slick.eot" ReplaceContent="TRUE" />
+    <File Path="Content\fonts\slick.svg" Url="Content/fonts/slick.svg" ReplaceContent="TRUE" />
+    <File Path="Content\fonts\slick.ttf" Url="Content/fonts/slick.ttf" ReplaceContent="TRUE" />
+    <File Path="Content\fonts\slick.woff" Url="Content/fonts/slick.woff" ReplaceContent="TRUE" />
+    <File Path="Content\slick-theme.css" Url="Content/slick-theme.css" ReplaceContent="TRUE" />
+    <File Path="Content\ajax-loader.gif" Url="Content/ajax-loader.gif" ReplaceContent="TRUE" />
   </Module>
 </Elements>

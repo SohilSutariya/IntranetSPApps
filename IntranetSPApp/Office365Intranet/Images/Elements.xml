@@ -8,5 +8,9 @@
     <File Path="Images\Slideshow\3.JPG" Url="Images/Slideshow/3.JPG" ReplaceContent="TRUE" />
     <File Path="Images\logo.png" Url="Images/logo.png" ReplaceContent="TRUE" />
     <File Path="Images\graph.png" Url="Images/graph.png" ReplaceContent="TRUE" />
+    <File Path="Images\close.png" Url="Images/close.png" ReplaceContent="TRUE" />
+    <File Path="Images\loading.gif" Url="Images/loading.gif" ReplaceContent="TRUE" />
+    <File Path="Images\next.png" Url="Images/next.png" ReplaceContent="TRUE" />
+    <File Path="Images\prev.png" Url="Images/prev.png" ReplaceContent="TRUE" />
   </Module>
 </Elements>

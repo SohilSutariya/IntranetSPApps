@@ -9,5 +9,9 @@
     <ProjectItemFile Source="Slideshow\3.JPG" Target="Images\Slideshow\" Type="ElementFile" />
     <ProjectItemFile Source="logo.png" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="graph.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="close.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="loading.gif" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="next.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="prev.png" Target="Images\" Type="ElementFile" />
   </Files>
 </ProjectItem>

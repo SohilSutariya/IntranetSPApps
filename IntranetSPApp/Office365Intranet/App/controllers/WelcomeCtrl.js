@@ -1,8 +1,8 @@
 ﻿(function (app) {
 
-    var WelcomeCtrl = ["$scope", "$filter", "$location", "$uibModal", "$sce", "localStorageService", "DataService", "WeatherService", 
+    var WelcomeCtrl = ["$scope", "$window", "$filter", "$location", "$uibModal", "$sce", "localStorageService", "DataService", "WeatherService", 
 
-    function ($scope, $filter, $location, $uibModal, $sce, localStorageService, DataService, WeatherService) {
+    function ($scope, $window, $filter, $location, $uibModal, $sce, localStorageService, DataService, WeatherService) {
 
         $scope.weatherData = [];
         $scope.appLinks = [];
@@ -25,6 +25,7 @@
             { date: '02 Nov', description: "Barminco repurchases additional US high yield bonds" },
             { date: '31 Dec', description: "Barminco awarded $110 million contract in Tasmania" },
         ];
+
         /* /PLACEHOLDER DATA */
 
 
@@ -120,6 +121,21 @@
         /* /SAFETY REPORTS */
 
 
+        /* SAFETY STATS */
+        DataService
+            .getSpList("SafetyStats")
+            .success(function (data) {
+                console.log("Safety Stats retrieved:");
+                console.log(data);
+
+                $scope.safetyStats = data.d.results[0];
+            })
+            .error(function () {
+                console.log("Error retrieving safety stats");
+            });
+        /* /SAFETY STATS */
+
+
         /* CEO MESSAGE */
         DataService
             .getSpList("CEOMsg", [{ name: "Status", value: "'Active'" }])
@@ -144,9 +160,6 @@
         DataService
             .getSpList("SiteLinks")
             .success(function (data) {
-                console.log("Successfully retrieved SiteLinks: ");
-                console.log(data);
-
                 $scope.siteLinks = data.d.results;
             })
             .error(function (data) {
@@ -154,6 +167,136 @@
                 console.log(data);
             });
         /* /COMPANY LINKS */
+
+
+        /* COMMODITY */
+        /* /COMMODITY */
+
+
+        /* DATEPICKER */
+        $scope.format = 'dd/MM/yyyy';
+        $scope.popupDf = {
+            opened: false
+        };
+        $scope.popupDt = {
+            opened: false
+        };
+        $scope.df = new Date();
+        $scope.dt = new Date();
+        $scope.df.setDate($scope.dt.getDate() - 7);
+
+        $scope.itemArray = [
+            { id: 110575, name: 'Gold' },
+            { id: 110568, name: 'Tin' },
+            { id: 110563, name: 'Copper' },
+            { id: 110564, name: 'Nickel' },
+            { id: 110565, name: 'Zinc' },
+        ];
+
+        $scope.selected = { value: $scope.itemArray[0] };
+
+        $scope.commodityUrl = "http://www.infomine.com/ChartsAndData/GraphEngine.ashx?z=f&gf=" + $scope.selected.value.id + ".AUD.oz&df=" + $filter('date')($scope.df, 'yyyyMMdd') + "&dt=" + $filter('date')($scope.dt, 'yyyyMMdd');
+
+        $scope.dateOptions = {
+            formatYear: 'yy',
+            maxDate: new Date(),
+            startingDay: 1,
+            showWeeks: false
+        };
+
+        $scope.openDf = function () {
+            $scope.popupDf.opened = true;
+        };
+
+        $scope.openDt = function () {
+            $scope.popupDt.opened = true;
+        };
+
+        $scope.updateCommodityUrl = function () {
+            if ($scope.dt < $scope.df) {
+                $scope.df = new Date($scope.dt);
+                $scope.df.setDate($scope.dt.getDate() - 7);
+            }
+
+            $scope.commodityUrl = "http://www.infomine.com/ChartsAndData/GraphEngine.ashx?z=f&gf=" + $scope.selected.value.id + ".AUD.oz&df=" + $filter('date')($scope.df, 'yyyyMMdd') + "&dt=" + $filter('date')($scope.dt, 'yyyyMMdd');
+        };
+        /* /DATEPICKER */
+
+
+        /* SLICK CAROUSEL */
+
+        $scope.slides = [
+            {
+                imgUrl: "../intranet/Images/Slideshow/1.jpg",
+                title: "Welcome to Barminco",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                imgUrl: "../intranet/Images/Slideshow/2.jpg",
+                title: "Safety First, Safety Foremost",
+                text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            },
+            {
+                imgUrl: "../intranet/Images/Slideshow/3.jpg",
+                title: "Barminco hits five years LTI-free milestone",
+                text: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+            },
+            {
+                imgUrl: "../intranet/Images/Slideshow/4.jpg",
+                title: "Underground Mining Excellence",
+                text: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure."
+            },
+        ];
+
+        //$scope.updateNumber1 = function () {
+        //    $scope.slickConfig1Loaded = false;
+        //    $scope.number1[2] = '123';
+        //    $scope.number1.push(Math.floor((Math.random() * 10) + 100));
+        //    $timeout(function () {
+        //        $scope.slickConfig1Loaded = true;
+        //    }, 5);
+        //};
+
+        //$scope.slickCurrentIndex = 0;
+
+        $scope.slickConfig = {
+            dots: true,
+            autoplay: true,
+            initialSlide: 3,
+            infinite: true,
+            autoplaySpeed: 3000,
+            method: {}//,
+            //event: {
+            //    beforeChange: function (event, slick, currentSlide, nextSlide) {
+            //        console.log('before change', Math.floor((Math.random() * 10) + 100));
+            //    },
+            //    afterChange: function (event, slick, currentSlide, nextSlide) {
+            //        $scope.slickCurrentIndex = currentSlide;
+            //    },
+            //    breakpoint: function (event, slick, breakpoint) {
+            //        console.log('breakpoint');
+            //    },
+            //    destroy: function (event, slick) {
+            //        console.log('destroy');
+            //    },
+            //    edge: function (event, slick, direction) {
+            //        console.log('edge');
+            //    },
+            //    reInit: function (event, slick) {
+            //        console.log('re-init');
+            //    },
+            //    init: function (event, slick) {
+            //        console.log('init');
+            //    },
+            //    setPosition: function (evnet, slick) {
+            //        console.log('setPosition');
+            //    },
+            //    swipe: function (event, slick, direction) {
+            //        console.log('swipe');
+            //    }
+            //}
+        };
+        /* /SLICK CAROUSEL */
 
 
         /* MODALS */

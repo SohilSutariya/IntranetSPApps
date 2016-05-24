@@ -17,5 +17,14 @@
     <ProjectItemFile Source="font\weathericons-regular-webfont.eot" Target="Content\font\" Type="ElementFile" />
     <ProjectItemFile Source="select.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="select.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="lightbox.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="lightbox.min.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="slick.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\slick.eot" Target="Content\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\slick.svg" Target="Content\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\slick.ttf" Target="Content\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="fonts\slick.woff" Target="Content\fonts\" Type="ElementFile" />
+    <ProjectItemFile Source="slick-theme.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="ajax-loader.gif" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

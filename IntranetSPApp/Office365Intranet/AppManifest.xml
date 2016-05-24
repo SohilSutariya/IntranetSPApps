@@ -2,7 +2,7 @@
 <!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="intranet"
-     ProductID="{91212a4d-e65a-4e32-9a99-f2cac64e4f70}"
+     ProductID="{91212a4d-e65a-4e32-9a99-f2cac64e4f71}"
      Version="1.0.0.0"
      SharePointMinVersion="15.0.0.0"
 >

@@ -17,10 +17,40 @@ body {
     min-width: 250px;
 }
 
+
+/* SLICK SLIDER */
 .gallery {
+    position: relative;
     margin-bottom: 2em;
     border-radius: 4px;
+    padding: 1em 30px;
 }
+
+.my-slick-left,
+.my-slick-right {
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    padding: 0.5em;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: #E65B17 !important;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.my-slick-left {
+    left: 0;
+}
+
+.my-slick-right {
+    right: 0;
+}
+/* /SLICK SLIDER */
 
 
 /* WEATHER WIDGET */
@@ -392,6 +422,20 @@ body {
     .safety-graph {
         padding: 1em;
     }
+
+.commodity-info {
+    padding: 1em;
+}
+
+    .commodity-info .header {
+        padding-bottom: 1em;
+        color: rgba(0,0,0,0.54);
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .commodity-btn {
+        margin-top: 28px;
+    }
 /* /CARDS UI */
 
 
@@ -412,7 +456,6 @@ body {
 
 .footer-content {
     height: 60px;
-    border-radius: 3px;
     text-align: center;
 }
 
@@ -440,13 +483,19 @@ body {
         height: 100%;
     }
      .newsletters-image{
-    max-height : 210px;
-    box-shadow: 0 0 5px black;
+        max-height : 200px;
+        box-shadow: 0 0 5px black;
     }
 
     .newsletters{
-        max-height: 330px;
-        margin-bottom: 2em;
+        max-height: 30%;
+        margin-bottom: 1em;
+    }
+
+    .newsletters-header{
+        margin-bottom:0.1em;
+        color : darkorange;
+        font-size :medium;
     }
 
 .ellipsis {
@@ -555,6 +604,18 @@ body {
 
 .path-color {
     color: #006621;
+}
+
+.primary-text {
+    color: rgba(0,0,0,0.87);
+}
+
+.secondary-text {
+    color: rgba(0,0,0,0.54);
+}
+
+.disabled-text {
+    color: rgba(0,0,0,0.38);
 }
 /* /COLOR */
 
@@ -719,5 +780,38 @@ body {
 
 .pagination > li > a, .pagination > li > span {
     color: #E65B17;
+}
+
+.uib-datepicker-popup {
+    padding: 0;
+}
+
+.uib-datepicker-popup:focus,
+.uib-datepicker-popup > li:focus,
+.uib-datepicker:focus,
+.uib-daypicker:focus {
+    outline: none !important;
+}
+
+.uib-datepicker-popup .btn-sm, 
+.uib-datepicker-popup .btn-group-sm > .btn {
+    border-radius: 0 !important;
+}
+
+.uib-datepicker-popup .btn:active, 
+.uib-datepicker-popup .btn.active {
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    background-color: #E65B17 !important;
+}
+
+    .btn-primary:hover {
+        background-color: #FF6519 !important;
+    }
+
+.input-group-btn > .btn-default {
+    background-color: rgba(0,0,0,0.07) !important;
 }
 /* /BOOTSTRAP OVERRIDES */

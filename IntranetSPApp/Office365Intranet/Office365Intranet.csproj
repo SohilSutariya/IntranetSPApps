@@ -43,6 +43,9 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Content\fonts\slick.eot" />
+    <None Include="Content\fonts\slick.ttf" />
+    <None Include="Content\fonts\slick.woff" />
     <None Include="Content\font\weathericons-regular-webfont.eot" />
     <None Include="Content\font\weathericons-regular-webfont.ttf" />
     <None Include="Content\font\weathericons-regular-webfont.woff" />
@@ -77,17 +80,27 @@
     <Content Include="App\views\PlaygroundView.html" />
     <Content Include="App\views\SearchView.html" />
     <Content Include="App\views\WelcomeView.html" />
+    <Content Include="Content\ajax-loader.gif" />
+    <Content Include="Content\fonts\slick.svg" />
+    <Content Include="Content\lightbox.css" />
+    <Content Include="Content\lightbox.min.css" />
     <Content Include="Content\loading-bar.css" />
     <Content Include="Content\loading-bar.min.css" />
     <Content Include="Content\select.css" />
     <Content Include="Content\select.min.css" />
+    <Content Include="Content\slick-theme.css" />
+    <Content Include="Content\slick.css" />
     <Content Include="Content\weather-css\weather-icons-wind.css" />
     <Content Include="Content\weather-css\weather-icons-wind.min.css" />
     <Content Include="Content\weather-css\weather-icons.css" />
     <Content Include="Content\weather-css\weather-icons.min.css" />
     <Content Include="Content\font\weathericons-regular-webfont.svg" />
+    <Content Include="Images\close.png" />
     <Content Include="Images\graph.png" />
+    <Content Include="Images\loading.gif" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\prev.png" />
     <Content Include="Images\Slideshow\1.JPG" />
     <Content Include="Images\Slideshow\2.JPG" />
     <Content Include="Images\Slideshow\3.JPG" />
@@ -101,6 +114,8 @@
     <Content Include="Scripts\Angular\angular-local-storage.min.js" />
     <Content Include="Scripts\Angular\angular-sanitize.js" />
     <Content Include="Scripts\Angular\angular-sanitize.min.js" />
+    <Content Include="Scripts\Angular\angular-slick.js" />
+    <Content Include="Scripts\Angular\angular-slick.min.js" />
     <Content Include="Scripts\Angular\loading-bar.js" />
     <Content Include="Scripts\Angular\loading-bar.min.js" />
     <Content Include="Scripts\Bootstrap\css\bootstrap-theme.css" />
@@ -140,6 +155,10 @@
     <Content Include="Scripts\jquery\jquery-2.2.2.min.js" />
     <Content Include="Scripts\Angular\select.js" />
     <Content Include="Scripts\Angular\select.min.js" />
+    <Content Include="Scripts\lightbox.js" />
+    <Content Include="Scripts\lightbox.min.js" />
+    <Content Include="Scripts\slick.js" />
+    <Content Include="Scripts\slick.min.js" />
     <Content Include="Scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
